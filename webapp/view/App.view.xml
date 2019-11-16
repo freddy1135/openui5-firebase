@@ -1,3 +1,21 @@
-<mvc:View controllerName="openUI5.controller.App" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
-	<Button text="Press Me" press="onPress"/>
+<mvc:View controllerName="openUI5.controller.App" 
+	xmlns="sap.m" 
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+	<Shell appWidthLimited="false">
+		<Page title="Email Sender!">
+			<content>
+				<FlexBox justifyContent="Center" direction="Column">
+					<Panel headerText="Enter Details" class="sapUiSmallMargin" width="auto">
+						<content>
+							<FlexBox justifyContent="Center" direction="Column">
+								<Input id="email" placeholder="Enter Email ID" width="100%" maxLength="50" />
+								<Input id="message" placeholder="Enter Message" width="100%" maxLength="100" />
+								<Button text="Send Email" type="Emphasized" press="onSendEmail"/>
+							</FlexBox>
+						</content>
+					</Panel>
+				</FlexBox>
+			</content>
+		</Page>
+	</Shell>
 </mvc:View>
