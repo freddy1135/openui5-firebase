@@ -5,20 +5,37 @@
 	<meta charset="UTF-8" http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>openUI5 Walkthrough</title>
 
-	<script id="sap-ui-bootstrap" 
-		src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
-		data-sap-ui-theme="sap_belize_plus" 
-		data-sap-ui-compatVersion="edge" 
-		data-sap-ui-resourceroots='{
+	<script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+		data-sap-ui-theme="sap_belize_plus" data-sap-ui-compatVersion="edge" data-sap-ui-resourceroots='{
 			"openUI5": "./",
 			"LOCAL": "./"
-		}' 
-		data-sap-ui-oninit="module:sap/ui/core/ComponentSupport" 
-		data-sap-ui-async="true">
+		}' data-sap-ui-oninit="module:sap/ui/core/ComponentSupport" data-sap-ui-async="true">
 	</script>
 </head>
 
 <body class="sapUiBody" id="content">
+	
+	<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyAijigsTRBBxlS5PaZvkApccH2IPfhcopA",
+			authDomain: "fred-openui5.firebaseapp.com",
+			databaseURL: "https://fred-openui5.firebaseio.com",
+			projectId: "fred-openui5",
+			storageBucket: "fred-openui5.appspot.com",
+			messagingSenderId: "303955249648",
+			appId: "1:303955249648:web:9f0623ca2bc3ed7746f535",
+			measurementId: "G-3MY7Z2XV7P"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+	</script>
+
 	<div data-sap-ui-component data-name="openUI5" data-id="container" data-settings='{"id" : "container"}'></div>
 </body>
 

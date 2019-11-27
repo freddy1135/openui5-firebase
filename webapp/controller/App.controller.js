@@ -7,7 +7,7 @@ sap.ui.define([
 	return Controller.extend("openUI5.controller.App", {
 
 		onInit: function (oEvent) {
-
+			
 		},
 
 		onSendEmail: function (oEvent) {
@@ -15,7 +15,8 @@ sap.ui.define([
 			var oEntry = {
 				"email": this.byId("email").getValue(),
 				"message": this.byId("message").getValue()
-			}
+			};
+			
 			var that = this;
 			$.ajax({
 				type: "POST",
@@ -28,9 +29,7 @@ sap.ui.define([
 					that.byId("email").setValue("");
 					that.byId("message").setValue("");
 				},
-
 				error: function (err) {
-					console.log(err);
 					MessageBox.error("Error while sending Email");
 				}
 			});

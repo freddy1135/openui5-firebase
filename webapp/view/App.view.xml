@@ -1,6 +1,4 @@
-<mvc:View controllerName="openUI5.controller.App" 
-	xmlns="sap.m" 
-	xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+<mvc:View controllerName="openUI5.controller.App" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
 	<Shell appWidthLimited="false">
 		<Page title="Email Sender!">
 			<content>
@@ -8,8 +6,8 @@
 					<Panel headerText="Enter Details" class="sapUiSmallMargin" width="auto">
 						<content>
 							<FlexBox justifyContent="Center" direction="Column">
-								<Input id="email" placeholder="Enter Email ID" width="100%" maxLength="50" />
-								<Input id="message" placeholder="Enter Message" width="100%" maxLength="100" />
+								<Input id="email" placeholder="Enter Email ID" width="100%" maxLength="50"/>
+								<Input id="message" placeholder="Enter Message" width="100%" maxLength="100"/>
 								<Button text="Send Email" type="Emphasized" press="onSendEmail"/>
 							</FlexBox>
 						</content>
@@ -17,7 +15,24 @@
 					<Panel headerText="Sender Details" class="sapUiSmallMargin" width="auto">
 						<content>
 							<FlexBox justifyContent="Center" direction="Column">
-								<Table></Table>
+								<Table items="/Recipient">
+									<columns>
+										<Column>
+											<Text text="Recipient"/>
+										</Column>
+										<Column>
+											<Text text="Message"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{email}"/>
+												<Text text="{message}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
 							</FlexBox>
 						</content>
 					</Panel>

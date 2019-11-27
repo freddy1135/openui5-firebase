@@ -23,9 +23,4 @@ app.post('/sendEmail', function (req, res) {
     });
 }); 
 
-app.get('/', function (req, res) {
-
-    res.send("Hello World");
-});
-
 exports.app = functions.https.onRequest(app);

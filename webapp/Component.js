@@ -14,6 +14,7 @@ sap.ui.define([
             // call the init function of the parent
             UIComponent.prototype.init.apply(this, arguments);
 
+
             // set data model
             var oData = {
                 recipient: {
