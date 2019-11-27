@@ -1,7 +1,10 @@
 let functions = require('firebase-functions');
 let express = require('express');
 let app = express();
+let cors = require('cors');
 let sgMail = require('@sendgrid/mail');
+
+app.use(cors());
 
 app.post('/sendEmail', function (req, res) {
     console.log("%j", req.body);
@@ -9,15 +12,20 @@ app.post('/sendEmail', function (req, res) {
         var msg = {
         to: req.body.email,
         from: 'freddy.jetty.johnson@sap.com',
-        subject: 'Sending with SendGrid is Fun',
+        subject: 'SendGrid sending from Firebase',
         text: req.body.message
     };
     sgMail.send(msg);
     console.log('Email Send Successfully!');
     res.send({
-        "statusCode" : "200",
         "email" : req.body.email,
         "message": req.body.message
     });
+}); 
+
+app.get('/', function (req, res) {
+
+    res.send("Hello World");
 });
+
 exports.app = functions.https.onRequest(app);

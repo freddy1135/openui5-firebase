@@ -14,6 +14,13 @@
 							</FlexBox>
 						</content>
 					</Panel>
+					<Panel headerText="Sender Details" class="sapUiSmallMargin" width="auto">
+						<content>
+							<FlexBox justifyContent="Center" direction="Column">
+								<Table></Table>
+							</FlexBox>
+						</content>
+					</Panel>
 				</FlexBox>
 			</content>
 		</Page>

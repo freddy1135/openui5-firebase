@@ -6,6 +6,10 @@ sap.ui.define([
 
 	return Controller.extend("openUI5.controller.App", {
 
+		onInit: function (oEvent) {
+
+		},
+
 		onSendEmail: function (oEvent) {
 
 			var oEntry = {
