@@ -8,7 +8,7 @@
 							<FlexBox justifyContent="Center" direction="Column">
 								<Input id="email" placeholder="Enter Email ID" width="100%" maxLength="50"/>
 								<Input id="message" placeholder="Enter Message" width="100%" maxLength="100"/>
-								<Button text="Send Email" type="Emphasized" press="onSendEmail"/>
+								<Button text="Send Email" type="Emphasized" press="onSendEmail" width="100%"/>
 							</FlexBox>
 						</content>
 					</Panel>
