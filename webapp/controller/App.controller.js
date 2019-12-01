@@ -20,7 +20,17 @@ sap.ui.define([
 			var recipientModel = new JSONModel(oRecipient);
 			this.getView().setModel(recipientModel);
 			// this.getRecipients(collRefRecipients);
-			this.getRealTimeRecipients(collRefRecipients);
+
+			// Create a Fireauth reference
+			var fireAuth = this.getView().getModel("firebase").getProperty("/fireAuth");
+
+			fireAuth.onAuthStateChanged(function (user) {
+				if (user) {
+					// Get realtime shipments
+					this.getRealTimeRecipients(collRefRecipients);
+				}
+			}.bind(this));
+
 		},
 
 		// getRecipients: function (collRefRecipients) {

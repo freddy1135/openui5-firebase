@@ -23,9 +23,12 @@ sap.ui.define([
             // Create a Firestore reference
             var firestore = firebase.firestore();
 
+            var fireAuth = firebase.auth();
+
             // Firebase services object
             var oFirebase = {
-                firestore: firestore
+                firestore: firestore,
+                fireAuth: fireAuth
             };
 
             // Create a Firebase model out of the oFirebase service object which contains all required Firebase services
