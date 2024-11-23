@@ -1,12 +1,12 @@
 import { initializeFirebase } from './Firebase';
-import { UIComponent } from 'sap/ui/core/UIComponent';
-import { JSONModel } from 'sap/ui/model/json/JSONModel';
+import UIComponent from './Component';
+import JSONModel from 'sap/ui/model/json/JSONModel';
 
 describe('Component', () => {
   let component: UIComponent;
 
   beforeEach(() => {
-    component = new UIComponent();
+    component = new UIComponent("test-component");
     component.setModel(initializeFirebase(), 'firebase');
   });
 
@@ -18,7 +18,7 @@ describe('Component', () => {
   });
 
   it('should call onAuthStateChanged with initializeGoogleAuth', () => {
-    const fireAuth = component.getModel('firebase').getProperty('/fireAuth');
+    const fireAuth = component.getModel('firebase')?.getProperty('/fireAuth');
     const spy = jest.spyOn(fireAuth, 'onAuthStateChanged');
     component.initializeGoogleAuth = jest.fn();
     fireAuth.onAuthStateChanged(component.initializeGoogleAuth);

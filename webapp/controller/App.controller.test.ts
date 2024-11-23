@@ -5,7 +5,7 @@ describe('AppController', () => {
   let controller: AppController;
 
   beforeEach(() => {
-    controller = new AppController();
+    controller = new AppController("test-app");
     const firebaseModel = new JSONModel({
       firestore: {},
       fireAuth: {
@@ -21,7 +21,7 @@ describe('AppController', () => {
   });
 
   it('should initialize Firebase model and set up auth state change listener', () => {
-    const firebaseModel = controller.getView().getModel('firebase') as JSONModel;
+    const firebaseModel = controller.getView()?.getModel('firebase') as JSONModel;
     const fireAuth = firebaseModel.getProperty('/fireAuth');
     const spy = jest.spyOn(fireAuth, 'onAuthStateChanged');
     controller.onInit();
@@ -44,7 +44,7 @@ describe('AppController', () => {
       }),
     };
 
-    const firebaseModel = controller.getView().getModel('firebase') as JSONModel;
+    const firebaseModel = controller.getView()?.getModel('firebase') as JSONModel;
     firebaseModel.setProperty('/firestore', firestoreMock);
 
     await controller.onSendEmail();

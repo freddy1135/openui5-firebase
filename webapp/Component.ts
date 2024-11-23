@@ -17,7 +17,7 @@ export default class Component extends UIComponent {
         fireAuth.onAuthStateChanged(this.initializeGoogleAuth);
     }
 
-    private initializeGoogleAuth(user: firebase.User | null): void {
+    public initializeGoogleAuth(user: firebase.User | null): void {
         if (user) {
             console.log("User Signed In", user);
         } else {
