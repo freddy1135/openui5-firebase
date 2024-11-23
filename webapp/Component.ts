@@ -1,6 +1,5 @@
 import UIComponent from "sap/ui/core/UIComponent";
-import JSONModel from "sap/ui/model/json/JSONModel";
-import Firebase from "./Firebase";
+import { initializeFirebase } from "./Firebase";
 
 export default class Component extends UIComponent {
     public static metadata = {
@@ -11,10 +10,10 @@ export default class Component extends UIComponent {
         // call the init function of the parent
         super.init();
 
-        this.setModel(Firebase.initializeFirebase(), "firebase");
+        this.setModel(initializeFirebase(), "firebase");
 
         // Create a Fireauth reference
-        const fireAuth = this.getModel("firebase").getProperty("/fireAuth");
+        const fireAuth = this.getModel("firebase")?.getProperty("/fireAuth");
         fireAuth.onAuthStateChanged(this.initializeGoogleAuth);
     }
 

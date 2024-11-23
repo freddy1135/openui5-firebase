@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "An OpenUI5 application with Firebase integration",
   "scripts": {
-    "start": "ui5 serve",
-    "build": "ui5 build",
-    "deploy": "firebase deploy",
+    "start": "pnpm --filter functions start",
     "lint": "eslint . --ext .ts",
     "test": "jest"
   },
   "dependencies": {
     "@sendgrid/mail": "^7.4.0",
+    "@types/firebase": "^3.2.3",
+    "@types/openui5": "^1.130.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "firebase-admin": "^9.11.0",
@@ -23,6 +23,7 @@
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "eslint": "^7.32.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^3.4.1",
     "jest": "^27.5.1",
     "prettier": "^3.3.3",

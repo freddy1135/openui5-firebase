@@ -67,13 +67,13 @@ export default class AppController extends Controller {
 			dataType: "json",
 			data: JSON.stringify(oEntry),
 			contentType: "application/json",
-			success: (data: { email: string; message: string }) => {
+			success: () => {
 				MessageBox.success("Email Send Successfully");
 				this.byId("email").setValue("");
 				this.byId("message").setValue("");
 			},
 			error: (err: JQuery.jqXHR) => {
-				MessageBox.error("Error while sending Email");
+				MessageBox.error("Error while sending Email" + err);
 			}
 		});
 

@@ -1,7 +1,5 @@
-import { Controller } from 'sap/ui/core/mvc/Controller';
-import { JSONModel } from 'sap/ui/model/json/JSONModel';
-import { MessageBox } from 'sap/m/MessageBox';
-import { AppController } from './App.controller';
+import JSONModel from 'sap/ui/model/json/JSONModel';
+import AppController from './App.controller';
 
 describe('AppController', () => {
   let controller: AppController;

@@ -9,6 +9,7 @@
     "outDir": "./dist",
     "rootDir": "./src"
   },
+  "types": ["firebase"],
   "include": [
     "src/**/*.ts"
   ],

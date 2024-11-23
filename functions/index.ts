@@ -6,11 +6,6 @@ import * as sgMail from '@sendgrid/mail';
 const app = express();
 app.use(cors());
 
-interface EmailRequest {
-  email: string;
-  message: string;
-}
-
 app.post('/sendEmail', function (req: express.Request, res: express.Response) {
   console.log("%j", req.body);
   sgMail.setApiKey(process.env.SENDGRID_API_KEY || '');
